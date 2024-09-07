@@ -1,0 +1,24 @@
+2024-09-06 14:52:09,584 INFO Starting ARC Prize 2024 Project...
+2024-09-06 14:52:09,584 INFO Loading dataset...
+2024-09-06 14:52:09,637 INFO Initializing the model...
+2024-09-06 14:52:09,768 INFO Starting training...
+2024-09-06 14:52:43,779 INFO Generating submission file...
+2024-09-06 14:52:43,782 INFO Starting submission generation...
+2024-09-06 14:52:43,782 INFO Opening sample submission file...
+2024-09-06 14:52:43,786 INFO Opening test file: /Users/seungwonlee/ARC Prize 2024/ARCPrice2024/arc-prize-2024/arc-agi_test_challenges.json
+2024-09-06 14:52:43,814 ERROR Error decoding JSON from the test file.
+2024-09-06 14:52:43,814 ERROR Error in main process: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/Users/seungwonlee/ARC Prize 2024/ARCPrice2024/arc-prize-2024/main.py", line 51, in main
+    submission = set_submission()
+  File "/Users/seungwonlee/ARC Prize 2024/ARCPrice2024/arc-prize-2024/submission.py", line 39, in set_submission
+    tasks_file = list(json.load(f).values())
+  File "/Users/seungwonlee/opt/anaconda3/lib/python3.9/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "/Users/seungwonlee/opt/anaconda3/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Users/seungwonlee/opt/anaconda3/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Users/seungwonlee/opt/anaconda3/lib/python3.9/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
