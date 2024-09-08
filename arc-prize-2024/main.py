@@ -11,6 +11,9 @@ from model import VisionTransformer
 from training import train_vit
 from submission import set_submission, save_submission
 
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
+
 logging.basicConfig(filename='arc_project.log', level=logging.DEBUG, 
                     format='%(asctime)s %(levelname)s %(message)s')
 
