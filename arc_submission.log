@@ -22,3 +22,14 @@ Traceback (most recent call last):
   File "/Users/seungwonlee/opt/anaconda3/lib/python3.9/json/decoder.py", line 355, in raw_decode
     raise JSONDecodeError("Expecting value", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2024-09-08 23:04:49,764 INFO Starting ARC Prize 2024 Project...
+2024-09-08 23:04:49,765 INFO Loading dataset...
+2024-09-08 23:04:49,765 ERROR Error in main process: [Errno 2] No such file or directory: '/Users/seungwonlee/ARC Prize 2024/ARCPrice2024/arc-prize-2024/arc-agi_training_challenges.json'
+Traceback (most recent call last):
+  File "c:\Users\redca\Documents\GitHub\ARCPrice2024\arc-prize-2024\main.py", line 36, in main
+    train_dataset = ARCDataset(train1_path)
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\redca\Documents\GitHub\ARCPrice2024\arc-prize-2024\dataset.py", line 11, in __init__
+    with open(data_path, 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/seungwonlee/ARC Prize 2024/ARCPrice2024/arc-prize-2024/arc-agi_training_challenges.json'
