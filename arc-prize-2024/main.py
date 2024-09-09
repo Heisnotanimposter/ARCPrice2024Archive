@@ -24,12 +24,12 @@ def main():
 
     try:
         # Define paths - kaggle version
-        train1_path = '/Users/seungwonlee/ARC Prize 2024/ARCPrice2024/arc-prize-2024/arc-agi_training_challenges.json'
-        train2_path = '/Users/seungwonlee/ARC Prize 2024/ARCPrice2024/arc-prize-2024/arc-agi_training_solutions.json'
-        eval1_path = '/Users/seungwonlee/ARC Prize 2024/ARCPrice2024/arc-prize-2024/arc-agi_evaluation_challenges.json'
-        eval2_path = '/Users/seungwonlee/ARC Prize 2024/ARCPrice2024/arc-prize-2024/arc-agi_evaluation_solutions.json'
-        test_path = '/Users/seungwonlee/ARC Prize 2024/ARCPrice2024/arc-prize-2024/arc-agi_test_challenges.json'
-        sample_path = '/Users/seungwonlee/ARC Prize 2024/ARCPrice2024/arc-prize-2024/sample_submission.json'
+        train1_path = '/Users/seungwonlee/ARC_Prize_2024/ARCPrize2024/arc-prize-2024/arc-agi_training_challenges.json'
+        train2_path = '/Users/seungwonlee/ARC_Prize_2024/ARCPrize2024/arc-prize-2024/arc-agi_training_solutions.json'
+        eval1_path = '/Users/seungwonlee/ARC_Prize_2024/ARCPrize2024/arc-prize-2024/arc-agi_evaluation_challenges.json'
+        eval2_path = '/Users/seungwonlee/ARC_Prize_2024/ARCPrize2024/arc-prize-2024/arc-agi_evaluation_solutions.json'
+        test_path = '/Users/seungwonlee/ARC_Prize_2024/ARCPrize2024/arc-prize-2024/arc-agi_test_challenges.json'
+        sample_path = '/Users/seungwonlee/ARC_Prize_2024/ARCPrize2024/arc-prize-2024/sample_submission.json'
 
         # Load the dataset
         logging.info("Loading dataset...")
@@ -61,7 +61,6 @@ def main():
         logging.error(f"Error in main process: {e}", exc_info=True)
         print(f" error: {e}")
 
-"""
     # Load and prepare the training dataset
     print("Loading dataset...")
     train_dataset = ARCDataset(train1_path)
@@ -84,7 +83,7 @@ def main():
     submission = set_submission()
 
     print("All tasks completed. Submission file 'submission.json' created successfully.")
-"""
+
 
 if __name__ == "__main__":
     main()

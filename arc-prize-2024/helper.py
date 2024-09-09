@@ -1,8 +1,39 @@
-# helpers.py
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import colors
+import logging
 
+version = {
+    'solver1': 3,  # Solver 1 has 3 variations
+    'solver2': 2,  # Solver 2 has 2 variations
+}
+
+# Define solvers
+def basic_solver_1(input_data, task):
+    try:
+        # Placeholder transformation logic for solver1
+        some_transformed_output = perform_transformation(input_data)
+        return [some_transformed_output]
+    except Exception as ex:
+        logging.error(f"Error in solver1: {ex}")
+        return []
+
+def basic_solver_2(input_data, task):
+    try:
+        # Placeholder transformation logic for solver2
+        some_other_output = perform_another_transformation(input_data)
+        return [some_other_output]
+    except Exception as ex:
+        logging.error(f"Error in solver2: {ex}")
+        return []
+
+# Mapping solvers
+solvers = {
+    'solver1': basic_solver_1,
+    'solver2': basic_solver_2,
+}
+
+# Color map and normalization for plotting
 cmap = colors.ListedColormap(
     ['#000000', '#0074D9','#FF4136','#2ECC40','#FFDC00',
      '#AAAAAA', '#F012BE', '#FF851B', '#7FDBFF', '#870C25'])
@@ -10,16 +41,16 @@ cmap = colors.ListedColormap(
 norm = colors.Normalize(vmin=0, vmax=9)
 
 def json_to_image(json_array):
-    """ Convert JSON array to image format (numpy array). """
+    """Convert JSON array to image format (numpy array)."""
     return np.array(json_array)
 
 def plot_pic(x):
-    """ Plot a single image. """
+    """Plot a single image."""
     plt.imshow(np.array(x), cmap=cmap, norm=norm)
     plt.show()
 
 def plot_task(task):
-    """ Plot the train and test images for a given task. """
+    """Plot the train and test images for a given task."""
     n = len(task["train"]) + len(task["test"])
     fig, axs = plt.subplots(2, n, figsize=(4*n, 8), dpi=200)
     plt.subplots_adjust(wspace=0, hspace=0)
@@ -41,3 +72,14 @@ def plot_task(task):
     
     plt.tight_layout()
     plt.show()
+
+# Placeholder transformation functions
+def perform_transformation(input_data):
+    """Transform the input data for solver1."""
+    # Your transformation logic here
+    return input_data  # Replace this with the actual transformation
+
+def perform_another_transformation(input_data):
+    """Transform the input data for solver2."""
+    # Your transformation logic here
+    return input_data  # Replace this with the actual transformation
