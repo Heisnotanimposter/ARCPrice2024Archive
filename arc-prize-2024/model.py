@@ -1,7 +1,26 @@
-# model.py
+
 import torch
 import torch.nn as nn
+import numpy as np
 
+def perform_transformation(input_data):
+    input_tensor = torch.tensor(input_data, dtype = torch.float32)
+
+    patches = patchify(input_tensor)
+
+    transformed_output = model(patches)
+
+    output_array = transformed_output.detach().numpy()
+
+    return output_array
+
+def patchify(input_tensor, patch_size = 4):
+
+    H,W = input_tensor.shape
+    assert H % patch_size ==0 and W % patch_size == 0,
+    patches = input_tensor.unfold(0,patch_size,patch_size).unfold(1,patch_size, patch_size)
+    patches = patches.contiguous().view(-1, patch_size*patch_size)
+    return patches
 class VisionTransformer(nn.Module):
     def __init__(self, input_size=10, patch_size=10, embedding_dim=768, num_classes=100, num_heads=8, num_layers=6):
         super(VisionTransformer, self).__init__()

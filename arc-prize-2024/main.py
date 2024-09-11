@@ -1,4 +1,3 @@
-# main.py
 import logging
 import torch
 from torch.utils.data import DataLoader
@@ -17,73 +16,43 @@ os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 logging.basicConfig(filename='arc_project.log', level=logging.DEBUG, 
                     format='%(asctime)s %(levelname)s %(message)s')
 
+def initialize_model(input_size, num_classes, learning_rate=1e-4):
+    model = VisionTransformer(input_size=input_size, num_classes=num_classes)
+    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    criterion = nn.MSELoss()
+    return model, optimizer, criterion
 
 def main():
-
     logging.info("Starting ARC Prize 2024 Project...")
-
     try:
-        # Define paths - kaggle version
-        train1_path = '/Users/seungwonlee/ARC_Prize_2024/ARCPrize2024/arc-prize-2024/arc-agi_training_challenges.json'
-        train2_path = '/Users/seungwonlee/ARC_Prize_2024/ARCPrize2024/arc-prize-2024/arc-agi_training_solutions.json'
-        eval1_path = '/Users/seungwonlee/ARC_Prize_2024/ARCPrize2024/arc-prize-2024/arc-agi_evaluation_challenges.json'
-        eval2_path = '/Users/seungwonlee/ARC_Prize_2024/ARCPrize2024/arc-prize-2024/arc-agi_evaluation_solutions.json'
-        test_path = '/Users/seungwonlee/ARC_Prize_2024/ARCPrize2024/arc-prize-2024/arc-agi_test_challenges.json'
-        sample_path = '/Users/seungwonlee/ARC_Prize_2024/ARCPrize2024/arc-prize-2024/sample_submission.json'
-
+        # Define paths
+        paths = {
+            'train': '/path/to/train_data.json',
+            'val': '/path/to/val_data.json',
+            'test': '/path/to/test_data.json',
+            'sample_submission': '/path/to/sample_submission.json'
+        }
         # Load the dataset
-        logging.info("Loading dataset...")
-        train_dataset = ARCDataset(train1_path)
+        train_dataset = ARCDataset(paths['train'])
         train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
-        #train_loader, val_loader = load_dataset()
 
-        # Initialize the model
-        logging.info("Initializing the model...")
-        model = VisionTransformer(input_size=100, num_classes=100)  # Ensure this matches your actual input and class sizes
-        
-        # Set up optimizer and loss function
-        optimizer = optim.Adam(model.parameters(), lr=1e-4)
-        criterion = nn.MSELoss()
+        # Initialize the model, optimizer, and loss function
+        model, optimizer, criterion = initialize_model(input_size=100, num_classes=100)
 
         # Train the model
         logging.info("Starting training...")
         train_vit(model, train_loader, optimizer, criterion)
-        
-        # Generate submission file
+
+        # Generate and save submission file
         logging.info("Generating submission file...")
         submission = set_submission()
-        save_submission(submission, sample_path)
+        save_submission(submission, paths['sample_submission'])
+        
         logging.info("Submission file saved successfully.")
-                
         print("Task Complete")
-      
     except Exception as e:
         logging.error(f"Error in main process: {e}", exc_info=True)
         print(f" error: {e}")
-
-    # Load and prepare the training dataset
-    print("Loading dataset...")
-    train_dataset = ARCDataset(train1_path)
-    train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
-
-    # Initialize the model
-    print("Initializing the model...")
-    model = VisionTransformer(input_size=100, num_classes=100)
-
-    # Set up optimizer and loss function
-    optimizer = optim.Adam(model.parameters(), lr=1e-4)
-    criterion = nn.MSELoss()
-
-    # Train the model
-    print("Starting training...")
-    train_vit(model, train_loader, optimizer, criterion)
-
-    # Generate submission file
-    print("Generating submission file...")
-    submission = set_submission()
-
-    print("All tasks completed. Submission file 'submission.json' created successfully.")
-
 
 if __name__ == "__main__":
     main()

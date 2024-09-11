@@ -11,8 +11,8 @@ version = {
 # Define solvers
 def basic_solver_1(input_data, task):
     try:
-        # Placeholder transformation logic for solver1
         some_transformed_output = perform_transformation(input_data)
+        logging.info(f"Solver1 Output: {some_transformed_output}")
         return [some_transformed_output]
     except Exception as ex:
         logging.error(f"Error in solver1: {ex}")
@@ -20,14 +20,13 @@ def basic_solver_1(input_data, task):
 
 def basic_solver_2(input_data, task):
     try:
-        # Placeholder transformation logic for solver2
         some_other_output = perform_another_transformation(input_data)
+        logging.info(f"Solver2 Output: {some_other_output}")
         return [some_other_output]
     except Exception as ex:
         logging.error(f"Error in solver2: {ex}")
-        return []
-
-# Mapping solvers
+        return []# Mapping solvers
+    
 solvers = {
     'solver1': basic_solver_1,
     'solver2': basic_solver_2,
