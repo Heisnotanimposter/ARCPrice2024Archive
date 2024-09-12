@@ -8,7 +8,7 @@ from setup import load_dataset
 from helper import json_to_image, plot_pic, plot_task
 from dataset import ARCDataset
 from model import VisionTransformer
-from training import train_vit
+from train import VisionTransformer, train_vit
 from submission import set_submission, save_submission
 
 import os
@@ -17,10 +17,16 @@ os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 logging.basicConfig(filename='arc_project.log', level=logging.DEBUG, 
                     format='%(asctime)s %(levelname)s %(message)s')
 
-
 def main():
 
     logging.info("Starting ARC Prize 2024 Project...")
+
+    model = VisionTransformer(input_size=100, patch_size=10, embedding_dim=768, num_classes=100, num_heads=8, num_layers=6)
+    criterion = nn.CrossEntropyLoss()  
+    optimizer = optim.Adam(model.parameters(), lr=0.001)
+    dataloader = DataLoader  
+
+    train_vit(model, dataloader, optimizer, criterion, epochs=10)
 
     try:
         # Define paths - colab version
@@ -91,5 +97,3 @@ def main():
     print("All tasks completed. Submission file 'submission.json' created successfully.")
 
 
-if __name__ == "__main__":
-    main()

@@ -42,6 +42,7 @@ def load_dataset(batch_size=32):
     test_path = '/content/drive/MyDrive/2024-2/ARC/ARCPrice2024/arc-prize-2024/arc-agi_test_challenges.json'
         
     sample_path = '/content/drive/MyDrive/2024-2/ARC/ARCPrice2024/arc-prize-2024/sample_submission.json'
+    
     # Initialize dataset and dataloader
     train_dataset = ARCDataset(train1_path)
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
