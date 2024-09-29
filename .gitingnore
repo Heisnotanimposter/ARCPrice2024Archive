@@ -1,0 +1,11 @@
+# Ignore all .log files
+*.log
+*.pyc
+*.DS_store
+
+# Ignore the node_modules directory
+#node_modules/
+
+# Ignore all files in the temp directory
+#temp/
+
