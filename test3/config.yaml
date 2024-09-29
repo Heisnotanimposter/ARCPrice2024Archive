@@ -1,0 +1,18 @@
+
+model:
+  embed_size: 512
+  heads: 8
+  dropout: 0.1
+  forward_expansion: 4
+  num_transformer_layers: 2
+  latent_dim: 256
+  hidden_size: 256
+  num_lstm_layers: 3
+  max_len: 100
+
+training:
+  batch_size: 32
+  learning_rate: 0.0001
+  num_epochs: 50
+  patience: 10
+  save_path: './best_model.pth'

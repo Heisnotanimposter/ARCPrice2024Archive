@@ -2,6 +2,7 @@
 *.log
 *.pyc
 *.DS_store
+*.zip
 
 # Ignore the node_modules directory
 #node_modules/
