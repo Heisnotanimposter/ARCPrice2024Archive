@@ -1,6 +1,6 @@
-!pip install keras==2.4.3
+!pip install keras==2.4.4
 
-!pip install tensorflow==2.3.1.
+!pip install tensorflow==2.3.2.
 
 !pip install keras_self_attention
 
