@@ -1,17 +1,22 @@
-ARC-AGI
-Timeline
+# ARC Prize 2024: Development Hub 🏛️
 
-<img width="1200" height="300" alt="ARC-AGI-Timeline" src="https://github.com/user-attachments/assets/5428536b-157f-400a-a749-b2a6c286b55d" />
+A central repository for various approaches and legacy experiments from the ARC Prize 2024 competition.
 
+## Overview
+This repository serves as a hub for the research and development conducted during the 2024 ARC-AGI competition. It contains multiple sub-projects and legacy systems that paved the way for our 2025 initiatives.
 
-2019 - ARC-AGI was introduced in François Chollets 2019 paper, "On the Measure of Intelligence". At this point, François has the hypothesis that it could not easily be beaten.
+### Key Sub-Projects
+- **ARC AGI 2:** Second-generation reasoning engine.
+- **ARC AGI 3:** Advanced iteration with improved spatial reasoning.
+- **arc-prize-2024-main:** The core submission framework for the 2024 competition.
 
-2020 - In order to test this, he hosted the first ARC-AGI competition on Kaggle in 2020. The winning team, "ice cuber," achieved a 21% success rate on the test set. This low score was the first strong evidence that François's ideas in On/Measure were correct.
+## Contents
+- `CodeStructureSummary.md`: Detailed breakdown of the internal logic and architecture.
+- `the_architects.pdf`: Technical paper outlining the core methodologies.
+- `legacy/`: Archive of initial prototypes and experimental scripts.
 
-2022 - In 2022 François and Lab42 teamed up to host the ARCathon 2022, the first global AI competition to try and beat ARC-AGI. 118 teams from 47 countries participated. Michael Hodel, won the ARCathon and received his trophy at the Swiss Global AI Awards following the honoring of Demis Hassabis by Pascal Kaufmann, founder of Lab42, in Davos. Michael has developed one of the best ARC-AGI domain-specific languages (DSLs) to date.
+## Usage
+Each sub-project contains its own specific entry points. Historically, this repository was used for rapid prototyping of diverse heuristic and neural solvers.
 
-2023 - Then in 2023, the competition continued with ARCathon 2023. This time 265+ teams from 65 countries competed. First place was shared between Somayyeh Gholami and Mehran Kazeminia (Team SM) and Jack Cole (Team MindsAI) both reaching 30% on the private evaluation set.
-
-2024 - In 2024, Mike Knoop and François teamed up to create ARC Prize 2024. While the Grand Prize remained unlocked, over $125K in prizes were awarded to teams with top scores and papers. The year ended with a top score on the private evaluation of 53% See the results.
-
-2025 - ARC Prize grew into a non-profit foundation to foster the mission of guiding open source AGI research. Based on ARC-AGI-2, the ARC Prize 2025 Kaggle Competition launched with over a $725K prize pool.
+---
+*Legacy archive of the 2024 ARC-AGI journey.*
