@@ -41,9 +41,9 @@ ARC_Prize_2024/
 ├── the_architects.pdf             # Core research methodology paper
 │
 ├── legacy/                        # (2020–2023) Program Synthesis & Early Deep Learning
-│   ├── LSTM/, RL/, RNN/           # Early neural experiment attempts
-│   ├── colabnotebooks/            # Historical Google Colab research notebooks
-│   └── papers/                    # Reference publications & literature
+│   ├── experiments/               # Early neural (CNN/LSTM, RL, RNN, Autoencoder) experiments
+│   ├── literature/                # Vision Transformer research papers & ViT scripts
+│   └── notebooks/                 # Historical Google Colab & local research notebooks
 │
 ├── arc-prize-2024-main/           # (2024) ARC-AGI-1 Test-Time Compute & DSL Solvers
 │   └── plain/                     # Core Kaggle submission framework & DSL solvers
